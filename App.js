@@ -9,12 +9,14 @@ import {AppLoading} from 'expo'
 import * as Font from 'expo-font'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import cartReducer from './store/reducers/cart'
+import orderReducer from './store/reducers/order'
 
 enableScreens();
 
 const rootReducer =  combineReducers({
   products: productReducer,
-  cart: cartReducer 
+  cart: cartReducer,
+  orders: orderReducer 
 });
 
 const store = createStore(rootReducer, composeWithDevTools)
