@@ -1,3 +1,5 @@
+#API key
+constants/AuthKey.js
 # Logs
 logs
 *.log
