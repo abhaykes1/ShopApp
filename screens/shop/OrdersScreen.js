@@ -31,6 +31,13 @@ const OrdersScreen = () => {
             </View>
         )
     }
+    if(orders.length === 0){
+        return (
+          <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+            <Text style={{fontFamily: 'open-sans'}} >No orders found, maybe start ordering some orders?</Text>
+          </View>
+        )
+      }
     return (
         <FlatList 
             data={orders} 
