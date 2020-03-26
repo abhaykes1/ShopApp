@@ -10,7 +10,9 @@ const ProductDetailsScreen = (props) => {
     const selectedProduct = useSelector(state => state.products.availableProducts.find(prod => prod.id === ProductId))
     return (
         <ScrollView>
-            <Image style={styles.image} source={{uri : selectedProduct.imageUrl}} />
+            <View style={styles.container} >
+                <Image style={styles.image} source={{uri : selectedProduct.imageUrl}} resizeMode="contain" />
+            </View>
             <View style={styles.action} >
                 <Button 
                     color={Colors.primary} 
@@ -33,6 +35,16 @@ ProductDetailsScreen.navigationOptions = navData => {
 export default ProductDetailsScreen
 
 const styles = StyleSheet.create({
+    container:{
+        margin: 10,
+        flex: 1,
+        backgroundColor: '#e6e6e6',
+        borderRadius: 10,
+        overflow: 'hidden',
+        elevation: 10,
+        shadowOpacity:0.26,
+        shadowRadius:30
+    },
     image: {
         width: '100%',
         height: 300
