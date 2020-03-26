@@ -1,7 +1,7 @@
 import {createAppContainer, createSwitchNavigator} from 'react-navigation'
 import React from 'react'; 
 import {createStackNavigator} from 'react-navigation-stack'
-import {Platform, SafeAreaView, Button, View} from 'react-native'
+import {Platform, SafeAreaView, Button, View, Text} from 'react-native'
 import ProductsOverviewScreen from '../screens/shop/ProductsOverviewScreen'
 import Colors from '../constants/Colors'
 import ProductDetailsScreen from '../screens/shop/ProductDetailsScreen'
@@ -83,7 +83,18 @@ const ShopNavigator = createDrawerNavigator({
     contentComponent: props => {
         const dispatch = useDispatch()
         return (
-            <View style={{flex:1, paddingTop: 20,}}>
+            <View style={{flex:1,overflow:'hidden'}}>
+                <View style={{
+                    width: '100%',
+                    backgroundColor:Colors.accent,
+                    alignItems: 'center',
+                    height: 80,
+                    justifyContent: 'center',       
+                    paddingTop: 25
+                }}>
+                    <Text style={{fontSize: 18, fontFamily: 'open-sans-bold', }} >Shop App</Text>
+                </View>
+                
                 <SafeAreaView forceInset={{top: 'always', horizontal: 'never'}} >
                     <DrawerNavigatorItems {...props} />
                     <Button 
